@@ -1,49 +1,46 @@
-# NixOS Build System 
-# Run 'just' or 'just switch' to rebuild the system
-
-# Default recipe - rebuild and switch
+# Rebuild and switch
 default: switch
 
-# Rebuild and switch to new configuration
+# Rebuild system
 switch:
     sudo nixos-rebuild switch --flake . --impure
 
-# Test configuration without switching boot default
+# Test without switching boot
 test:
     sudo nixos-rebuild test --flake . --impure
 
-# Build configuration without activating (check for errors)
+# Check for errors
 check:
     nixos-rebuild dry-build --flake . --impure
 
-# Update all flake inputs to latest versions
+# Update flake inputs
 update:
     nix flake update
 
-# Update and rebuild in one step
+# Update and rebuild
 upgrade: update switch
 
-# List all system generations
+# List generations
 generations:
     nixos-rebuild list-generations
 
-# Rollback to previous generation
+# Rollback to previous
 rollback:
     sudo nixos-rebuild switch --rollback
 
-# Clean up old generations (keeps last 7 days)
+# Clean old generations (7 days)
 clean:
     sudo nix-collect-garbage --delete-older-than 7d
 
-# Clean up everything except current generation
+# Clean everything
 clean-all:
     sudo nix-collect-garbage -d
 
-# Show what would be collected by garbage collector
+# Show what would be cleaned
 gc-check:
     nix-store --gc --print-dead
 
-# Optimize nix store (deduplicate files)
+# Optimize store
 optimize:
     sudo nix-store --optimise
 
@@ -51,6 +48,6 @@ optimize:
 info:
     nix flake show
 
-# Check flake for issues
+# Check flake
 lint:
     nix flake check --impure
