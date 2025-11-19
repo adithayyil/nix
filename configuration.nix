@@ -38,6 +38,7 @@
     uv
     vscodium
     btop
+    just
   ];
 
   # NixOS release version (DO NOT CHANGE)
