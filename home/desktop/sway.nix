@@ -85,14 +85,14 @@ in
           border = colors.overlay0;
           background = colors.base;
           text = colors.text;
-          indicator = colors.rosewater;
+          indicator = colors.overlay0;
           childBorder = colors.overlay0;
         };
         unfocused = {
           border = colors.overlay0;
           background = colors.base;
           text = colors.text;
-          indicator = colors.rosewater;
+          indicator = colors.overlay0;
           childBorder = colors.overlay0;
         };
         urgent = {

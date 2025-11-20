@@ -40,6 +40,7 @@
     vscodium
     btop
     just
+    figma-linux
   ];
 
   # NixOS release version (DO NOT CHANGE)
