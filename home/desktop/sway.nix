@@ -30,7 +30,7 @@ in
       # Displays
       output = {
         # Home monitor
-        "DP-4" = {
+        "BNQ BenQ EX2510S G3N03892019" = {
           mode = "1920x1080@165.003Hz";
           position = "0,-1080";
           bg = "${colors.base} solid_color";
