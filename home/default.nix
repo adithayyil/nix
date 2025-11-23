@@ -6,7 +6,6 @@
     ./programs/kitty.nix
     ./programs/fuzzel.nix
     ./programs/tmux.nix
-    ./programs/vscodium.nix
   ];
 
   # Home Manager settings
@@ -21,7 +20,7 @@
 
   # User packages that don't need special configuration
   home.packages = with pkgs; [
-    # CLI 
+    # CLI
     neovim
     wget
     btop
@@ -31,6 +30,7 @@
     claude-code
     github-copilot-cli
     uv
+    vscodium
 
     # Desktop apps
     vesktop
@@ -41,4 +41,12 @@
 
   # Basic XDG configuration
   xdg.enable = true;
+
+  # Environment variables
+  home.sessionVariables = {
+    # Make all Electron apps use Wayland when available
+    ELECTRON_OZONE_PLATFORM_HINT = "auto";
+    # Force Electron apps to use Wayland
+    NIXOS_OZONE_WL = "1";
+  };
 }
