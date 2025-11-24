@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 let
-  davinci-resolve-custom = import ../pkgs/davinci-resolve { inherit pkgs; };
+  davinci = import ../pkgs/davinci-resolve { inherit pkgs; };
 in
 {
   imports = [
@@ -39,7 +39,7 @@ in
     vesktop
     figma-linux
     signal-desktop
-    davinci-resolve-custom
+    davinci
   ];
 
   # Basic XDG configuration
