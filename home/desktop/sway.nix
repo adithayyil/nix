@@ -17,6 +17,8 @@ in
 {
   imports = [
     ./waybar.nix
+    ../programs/swaylock.nix
+    ../programs/swayidle.nix
   ];
 
   wayland.windowManager.sway = {
@@ -112,6 +114,7 @@ in
         "${mod}+space" = "exec ${menu}";
         "${mod}+Shift+r" = "reload";
         "${mod}+Shift+e" = "exec swaymsg exit";
+        "${mod}+Escape" = "exec swaylock -f";
 
         # Focus (vim-style)
         "${mod}+h" = "focus left";
@@ -175,6 +178,7 @@ in
       # Startup applications
       startup = [
         { command = "waybar"; }
+        { command = "swayidle"; }
         { command = "swaymsg 'workspace number 1; exec ${terminal}'"; }
         { command = "swaymsg 'workspace number 2; exec codium'"; }
         { command = "swaymsg 'workspace number 3; exec firefox'"; }
