@@ -13,6 +13,7 @@
     ./modules/services.nix
     ./modules/power.nix
     ./modules/graphics.nix
+    ./modules/fingerprint.nix
 
     # Desktop environment
     ./modules/desktop/sway.nix
