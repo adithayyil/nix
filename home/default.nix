@@ -39,6 +39,7 @@ in
     vesktop
     figma-linux
     signal-desktop
+    mpv
     davinci
   ];
 
