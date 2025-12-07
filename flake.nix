@@ -11,19 +11,21 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... }: {
+    # System configuration
     nixosConfigurations.think = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
-
-        # Home Manager module
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.adi = import ./home;
-        }
       ];
+    };
+
+    # home-manager configuration
+    homeConfigurations."adi@think" = home-manager.lib.homeManagerConfiguration {
+      pkgs = import nixpkgs {
+        system = "x86_64-linux";
+        config.allowUnfree = true;
+      };
+      modules = [ ./home ];
     };
   };
 }
