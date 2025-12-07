@@ -3,9 +3,9 @@
 {
   programs.git = {
     enable = true;
-    userName = "adithayyil";
-    userEmail = "adithayyil@proton.me";
-    extraConfig = {
+    settings = {
+      user.name = "adithayyil";
+      user.email = "adithayyil@proton.me";
       init.defaultBranch = "main";
       url."git@github.com:".insteadOf = "https://github.com/";
     };
