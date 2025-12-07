@@ -3,12 +3,12 @@
 {
   services.swayidle = {
     enable = true;
-    events = [
+    events = {
       # Lock before sleep
-      { event = "before-sleep"; command = "${pkgs.swaylock-effects}/bin/swaylock -f"; }
+      before-sleep = "${pkgs.swaylock-effects}/bin/swaylock -f";
       # Lock on lid close
-      { event = "lock"; command = "${pkgs.swaylock-effects}/bin/swaylock -f"; }
-    ];
+      lock = "${pkgs.swaylock-effects}/bin/swaylock -f";
+    };
     timeouts = [
       # Dim screen after 5 minutes
       {
