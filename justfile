@@ -1,9 +1,16 @@
-# Rebuild and switch
-default: switch
+# Rebuild both system and home
+default: all
 
-# Rebuild system
+# Rebuild system only
 switch:
-    sudo nixos-rebuild switch --flake . --impure
+    nh os switch -- --impure
+
+# Rebuild home only
+home:
+    nh home switch -- --impure
+
+# Rebuild both system and home
+all: switch home
 
 # Test without switching boot
 test:
@@ -17,8 +24,8 @@ check:
 update:
     nix flake update
 
-# Update and rebuild
-upgrade: update switch
+# Update flake and rebuild both
+upgrade: update all
 
 # List generations
 generations:
