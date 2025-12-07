@@ -31,10 +31,18 @@
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # System packages 
+  # Helper utility for Nix/NixOS commands
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 7d --keep 5";
+    flake = "/home/adi/nix";
+  };
+
+  # System packages
   environment.systemPackages = with pkgs; [
   ];
 
-  # NixOS release version (DO NOT CHANGE)
+  # [!!DO NOT CHANGE!!] NixOS release version [!!DO NOT CHANGE!!]
   system.stateVersion = "25.05";
 }
