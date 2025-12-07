@@ -10,6 +10,7 @@ in
     ./programs/fuzzel.nix
     ./programs/tmux.nix
     ./programs/mako.nix
+    ./programs/git.nix
   ];
 
   # Home Manager settings
@@ -43,6 +44,16 @@ in
     mpv
     davinci
     spotify
+
+    # Sway desktop environment
+    brightnessctl
+    wl-clipboard
+    hyprshot
+    swaylock-effects
+    swayidle
+    waybar
+    fuzzel
+    pulseaudio
   ];
 
   # Basic XDG configuration
