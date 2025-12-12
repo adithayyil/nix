@@ -11,6 +11,7 @@ in
     ./programs/tmux.nix
     ./programs/mako.nix
     ./programs/git.nix
+    ./programs/vscodium.nix
     ./shell/bash.nix
   ];
 
@@ -36,7 +37,6 @@ in
     claude-code
     github-copilot-cli
     uv
-    vscodium
 
     # Desktop apps
     vesktop
