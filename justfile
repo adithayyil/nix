@@ -67,10 +67,6 @@ build host="meth":
 deploy host:
     deploy .#{{host}} --skip-checks
 
-# SSH to a host
-ssh host:
-    ssh {{host}}
-
 # Update and deploy to a host
 deploy-upgrade host: update (deploy host)
 
