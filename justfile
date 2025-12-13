@@ -69,11 +69,11 @@ deploy-server:
 
 # SSH to server
 ssh-server:
-    ssh adi@server
+    ssh meth
 
 # Update and deploy server
 upgrade-server: update deploy-server
 
 # Clean server generations
 clean-server:
-    ssh adi@server "sudo nix-collect-garbage --delete-older-than 7d"
+    ssh meth "sudo nix-collect-garbage --delete-older-than 7d"

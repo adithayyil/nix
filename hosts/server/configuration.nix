@@ -7,8 +7,7 @@
 {
   imports = [
     # Hardware configuration
-    # cp the hardware-configuration.nix from /etc
-    # ./hardware.nix
+    ./hardware.nix
 
     # Common modules
     ../../common/boot.nix
@@ -26,7 +25,7 @@
   networking.networkmanager.enable = false;
   networking.interfaces.eth0.ipv4.addresses = [
     {
-      address = "192.168.1.100"; # Adjust to your network
+      address = "10.0.0.76";
       prefixLength = 24;
     }
   ];

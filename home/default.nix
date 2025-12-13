@@ -16,6 +16,7 @@ in
     ./programs/tmux.nix
     ./programs/mako.nix
     ./programs/git.nix
+    ./programs/ssh.nix
     ./programs/vscodium.nix
     ./shell/bash.nix
   ];

@@ -26,18 +26,18 @@
     let
       # Helper function to create system configurations
       mkSystem =
-        hostname:
+        configName: hostname:
         nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit hostname; };
-          modules = [ ./hosts/${hostname}/configuration.nix ];
+          modules = [ ./hosts/${configName}/configuration.nix ];
         };
     in
     {
       # System configurations
       nixosConfigurations = {
-        think = mkSystem "think";
-        server = mkSystem "server";
+        think = mkSystem "think" "think";
+        server = mkSystem "server" "methamphetamine";
       };
 
       # home-manager configuration
@@ -51,10 +51,11 @@
 
       # deploy-rs configuration
       deploy.nodes.server = {
-        hostname = "server";
+        hostname = "10.0.0.76";
         profiles.system = {
           sshUser = "adi";
           user = "root";
+          sshOpts = [ "-i" "${builtins.getEnv "HOME"}/.ssh/methamphetamine" ];
           path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.server;
         };
       };
