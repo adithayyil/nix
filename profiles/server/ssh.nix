@@ -39,10 +39,5 @@
 
     maxretry = 5;
     bantime = "1h";
-
-    jails.sshd = ''
-      enabled = true
-      port = 22
-    '';
   };
 }
