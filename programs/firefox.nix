@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   programs.firefox = {
@@ -110,8 +115,8 @@
           installation_mode = "force_installed";
           private_browsing = true;
         };
-	
-	# Watch2Gether
+
+        # Watch2Gether
         "{6ea0a676-b3ef-48aa-b23d-24c8876945fb}" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/file/4491885/w2g-10.8.xpi";
           installation_mode = "force_installed";

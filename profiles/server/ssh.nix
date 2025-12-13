@@ -29,7 +29,6 @@
   # Allow SSH through PAM for specific users
   users.users.adi.openssh.authorizedKeys.keys = [ ];
 
-
   # Fail2ban for SSH brute-force protection
   services.fail2ban = {
     enable = true;

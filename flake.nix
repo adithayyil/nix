@@ -25,11 +25,13 @@
     }:
     let
       # Helper function to create system configurations
-      mkSystem = hostname: nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit hostname; };
-        modules = [ ./hosts/${hostname}/configuration.nix ];
-      };
+      mkSystem =
+        hostname:
+        nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit hostname; };
+          modules = [ ./hosts/${hostname}/configuration.nix ];
+        };
     in
     {
       # System configurations
@@ -58,8 +60,6 @@
       };
 
       # Validation checks
-      checks = builtins.mapAttrs (
-        system: deployLib: deployLib.deployChecks self.deploy
-      ) deploy-rs.lib;
+      checks = builtins.mapAttrs (system: deployLib: deployLib.deployChecks self.deploy) deploy-rs.lib;
     };
 }
