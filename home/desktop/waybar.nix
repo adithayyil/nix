@@ -173,7 +173,6 @@
           color: #4c4f69;
           border-bottom: 2px solid #7287fd;
       }
-      /* Workspaces */
       #workspaces {
           margin: 0 4px;
       }
@@ -198,27 +197,23 @@
           background: #ccd0da;
           color: #4c4f69;
       }
-      /* Custom NixOS logo */
       #custom-nixos {
           padding: 0 6px 0 12px;
           color: #7287fd;
           font-size: 16px;
           font-weight: 700;
       }
-      /* Mode indicator */
       #mode {
           background: #d20f39;
           color: #eff1f5;
           padding: 0 12px;
           margin: 0 4px;
       }
-      /* Center module */
       #clock {
           padding: 0 16px;
           font-weight: 600;
           color: #4c4f69;
       }
-      /* Right modules - all same color, minimal */
       #tray,
       #bluetooth,
       #pulseaudio,
@@ -227,22 +222,18 @@
           padding: 0 6px;
           color: #4c4f69;
       }
-      /* Bluetooth states */
       #bluetooth.disabled {
           color: #6c6f85;
       }
       #bluetooth.connected {
           color: #4c4f69;
       }
-      /* Network disconnected state */
       #network.disconnected {
           color: #6c6f85;
       }
-      /* Audio muted state */
       #pulseaudio.muted {
           color: #6c6f85;
       }
-      /* Battery states */
       #battery.warning {
           color: #df8e1d;
       }
@@ -255,7 +246,6 @@
               opacity: 0.5;
           }
       }
-      /* System tray */
       #tray > .passive {
           -gtk-icon-effect: dim;
       }

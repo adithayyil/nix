@@ -6,7 +6,7 @@
 }:
 
 {
-  # Keep server running - disable all power management
+  # DO NOT CHANGE: Keep server running - disable all power management
   services.logind.settings.Login = {
     HandleLidSwitch = "ignore";
     HandleLidSwitchDocked = "ignore";
@@ -17,7 +17,6 @@
     IdleAction = "ignore";
   };
 
-  # Disable all sleep/suspend/hibernate targets
   systemd.targets.sleep.enable = false;
   systemd.targets.suspend.enable = false;
   systemd.targets.hibernate.enable = false;

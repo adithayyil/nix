@@ -10,19 +10,13 @@
     enable = true;
 
     settings = {
-      # Disable password auth (keys only)
       PasswordAuthentication = false;
       PermitRootLogin = "no";
-
-      # Security hardening
       KbdInteractiveAuthentication = false;
       X11Forwarding = false;
-
-      # Performance
       UseDns = false;
     };
 
-    # Default SSH port
     ports = [ 22 ];
   };
 
@@ -34,7 +28,7 @@
     ignoreIP = [
       "127.0.0.1/8"
       "::1"
-      "10.0.0.0/24"  # Local network
+      "10.0.0.0/24"
     ];
 
     maxretry = 5;

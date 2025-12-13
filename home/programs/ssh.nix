@@ -9,7 +9,6 @@
   programs.ssh = {
     enable = true;
 
-    # Disable default config to avoid deprecation warning
     enableDefaultConfig = false;
 
     matchBlocks = {

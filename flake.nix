@@ -24,7 +24,6 @@
       ...
     }:
     let
-      # Helper function to create system configurations
       mkSystem =
         configName: hostname:
         nixpkgs.lib.nixosSystem {
@@ -34,13 +33,11 @@
         };
     in
     {
-      # System configurations
       nixosConfigurations = {
         think = mkSystem "think" "think";
         server = mkSystem "server" "methamphetamine";
       };
 
-      # home-manager configuration
       homeConfigurations."adi@think" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
           system = "x86_64-linux";
@@ -49,7 +46,6 @@
         modules = [ ./home ];
       };
 
-      # deploy-rs configuration
       deploy.nodes.server = {
         hostname = "meth";
         profiles.system = {
@@ -59,7 +55,6 @@
         };
       };
 
-      # Validation checks
       checks = builtins.mapAttrs (system: deployLib: deployLib.deployChecks self.deploy) deploy-rs.lib;
     };
 }
