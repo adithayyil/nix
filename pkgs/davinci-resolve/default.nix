@@ -1,14 +1,7 @@
 { pkgs, ... }:
 
-# DaVinci Resolve with additional Python packages for scripting and OpenCL support
-#
-# This wrapper provides:
-# 1. Extra python packages accessible for scripting
-# 2. OpenCL libraries explicitly injected into the FHS environment
-#
-# Note: The base davinci-resolve package already includes ocl-icd in targetPkgs,
-# but mesa.opencl (RustICL) needs to be explicitly provided via LD_LIBRARY_PATH
-# because the FHS environment doesn't automatically find it in the nix store.
+# Wrapper provides Python packages + OpenCL via LD_LIBRARY_PATH
+# (mesa.opencl not automatically found in FHS environment)
 
 let
   pythonWithPackages = pkgs.python3.withPackages (
@@ -24,7 +17,6 @@ pkgs.symlinkJoin {
   nativeBuildInputs = [ pkgs.makeWrapper ];
 
   postBuild = ''
-    # Wrap the FHS launcher to inject Python and OpenCL libraries
     wrapProgram $out/bin/davinci-resolve \
       --prefix PYTHONPATH : "${pythonWithPackages}/${pythonWithPackages.sitePackages}" \
       --prefix LD_LIBRARY_PATH : "${pkgs.mesa.opencl}/lib" \

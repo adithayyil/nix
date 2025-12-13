@@ -78,24 +78,28 @@
       ExtensionSettings = {
         "*".installation_mode = "blocked";
 
+        # uBlock Origin
         "uBlock0@raymondhill.net" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
           installation_mode = "force_installed";
           private_browsing = true;
         };
 
+        # Bitwarden
         "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/file/4567044/bitwarden_password_manager-2025.8.2.xpi";
           installation_mode = "force_installed";
           private_browsing = true;
         };
 
+        # SponsorBlock
         "sponsorBlocker@ajay.app" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/file/4608179/sponsorblock-6.1.0.xpi";
           installation_mode = "force_installed";
           private_browsing = true;
         };
 
+        # Watch2Gether
         "{6ea0a676-b3ef-48aa-b23d-24c8876945fb}" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/file/4491885/w2g-10.8.xpi";
           installation_mode = "force_installed";

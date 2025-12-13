@@ -5,13 +5,11 @@
     enable = true;
 
     settings = {
-      # Colors
       background-color = "#eff1f5";
       text-color = "#4c4f69";
       border-color = "#7287fd";
       progress-color = "over #9ca0b0";
 
-      # Layout
       anchor = "top-right";
       width = 350;
       height = 150;
@@ -20,21 +18,16 @@
       border-size = 2;
       border-radius = 0;
 
-      # Icons
       icons = true;
       max-icon-size = 48;
 
-      # Behavior
       default-timeout = 5000;
       ignore-timeout = false;
 
-      # Font
       font = "Inter 11";
 
-      # Grouped notifications
       group-by = "app-name";
 
-      # Urgency styling
       "urgency=low" = {
         border-color = "#9ca0b0";
         default-timeout = 3000;

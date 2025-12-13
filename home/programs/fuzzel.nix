@@ -10,9 +10,7 @@
     enable = true;
 
     settings = {
-      main = {
-        # Add any main settings here if needed
-      };
+      main = { };
 
       border = {
         radius = 0;

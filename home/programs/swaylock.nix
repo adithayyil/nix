@@ -5,54 +5,43 @@
     enable = true;
     package = pkgs.swaylock-effects;
     settings = {
-      # Catppuccin Latte colors
-      color = "eff1f5"; # Base background
+      color = "eff1f5";
 
-      # Clock
       clock = true;
       timestr = "%H:%M";
       datestr = "%a, %d %b";
 
-      # Indicator ring colors
-      ring-color = "9ca0b0"; # Overlay0 (inactive)
-      ring-ver-color = "7287fd"; # Lavender (verifying)
-      ring-wrong-color = "d20f39"; # Red (wrong password)
-      ring-clear-color = "fe640b"; # Peach (clearing)
+      ring-color = "9ca0b0";
+      ring-ver-color = "7287fd";
+      ring-wrong-color = "d20f39";
+      ring-clear-color = "fe640b";
 
-      # Inside indicator colors
-      inside-color = "eff1f5"; # Base
-      inside-ver-color = "7287fd"; # Lavender
-      inside-wrong-color = "d20f39"; # Red
-      inside-clear-color = "eff1f5"; # Base
+      inside-color = "eff1f5";
+      inside-ver-color = "7287fd";
+      inside-wrong-color = "d20f39";
+      inside-clear-color = "eff1f5";
 
-      # Line between ring and inside
-      line-color = "eff1f5"; # Base
-      line-ver-color = "eff1f5"; # Base
-      line-wrong-color = "eff1f5"; # Base
-      line-clear-color = "eff1f5"; # Base
+      line-color = "eff1f5";
+      line-ver-color = "eff1f5";
+      line-wrong-color = "eff1f5";
+      line-clear-color = "eff1f5";
 
-      # Text colors
-      text-color = "4c4f69"; # Text
-      text-ver-color = "4c4f69"; # Text
-      text-wrong-color = "4c4f69"; # Text
-      text-clear-color = "4c4f69"; # Text
+      text-color = "4c4f69";
+      text-ver-color = "4c4f69";
+      text-wrong-color = "4c4f69";
+      text-clear-color = "4c4f69";
 
-      # Key press highlight
-      key-hl-color = "7287fd"; # Lavender
-      bs-hl-color = "d20f39"; # Red (backspace)
+      key-hl-color = "7287fd";
+      bs-hl-color = "d20f39";
 
-      # Separator
-      separator-color = "9ca0b0"; # Overlay0
+      separator-color = "9ca0b0";
 
-      # Layout
       indicator-radius = 100;
       indicator-thickness = 10;
 
-      # Behavior
       show-failed-attempts = true;
       indicator-idle-visible = true;
 
-      # Font
       font = "Inter";
       font-size = 24;
     };
