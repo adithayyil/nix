@@ -35,7 +35,7 @@
     {
       nixosConfigurations = {
         think = mkSystem "think" "think";
-        server = mkSystem "server" "methamphetamine";
+        methamphetamine = mkSystem "methamphetamine" "methamphetamine";
       };
 
       homeConfigurations."adi@think" = home-manager.lib.homeManagerConfiguration {
@@ -46,12 +46,12 @@
         modules = [ ./home ];
       };
 
-      deploy.nodes.server = {
+      deploy.nodes.methamphetamine = {
         hostname = "meth";
         profiles.system = {
           sshUser = "adi";
           user = "root";
-          path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.server;
+          path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.methamphetamine;
         };
       };
 

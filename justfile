@@ -61,11 +61,11 @@ lint:
 
 # Build server config (no deploy)
 build-server:
-    nix build .#nixosConfigurations.server.config.system.build.toplevel
+    nix build .#nixosConfigurations.methamphetamine.config.system.build.toplevel
 
 # Deploy to server
 deploy-server:
-    deploy .#server --skip-checks
+    deploy .#methamphetamine --skip-checks
 
 # SSH to server
 ssh-server:
