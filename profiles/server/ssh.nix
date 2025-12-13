@@ -26,15 +26,23 @@
     ports = [ 22 ];
   };
 
-  # Allow SSH through PAM for specific users
   users.users.adi.openssh.authorizedKeys.keys = [ ];
 
-  # Fail2ban for SSH brute-force protection
   services.fail2ban = {
     enable = true;
+
     ignoreIP = [
       "127.0.0.1/8"
-      "192.168.1.0/24" # Your LAN
+      "::1"
+      "10.0.0.0/24"  # Local network
     ];
+
+    maxretry = 5;
+    bantime = "1h";
+
+    jails.sshd = ''
+      enabled = true
+      port = 22
+    '';
   };
 }
