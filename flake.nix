@@ -51,8 +51,7 @@
 
       # deploy-rs configuration
       deploy.nodes.server = {
-        hostname = "methamphetamine";
-        interactiveSudo = true;
+        hostname = "meth";
         profiles.system = {
           sshUser = "adi";
           user = "root";
