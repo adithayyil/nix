@@ -1,8 +1,10 @@
 keys:
   - &meth age1kamap0drqtk458qat2jr03sma5l0k5lzlqsezqtzjhkd0azsc9lql5upk8
+  - &think age1t6aywswz6kex9kgl9gvjd3z3d853wht6rlmv8rzyjdpq6gqvla3stehvp8
 
 creation_rules:
   - path_regex: secrets/secrets\.yaml$
     key_groups:
       - age:
           - *meth
+          - *think
