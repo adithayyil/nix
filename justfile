@@ -64,12 +64,24 @@ build host="meth":
     nix build .#nixosConfigurations.{{host}}.config.system.build.toplevel
 
 # Deploy to a host
-deploy host:
-    deploy .#{{host}} --skip-checks
+deploy host="meth":
+    #!/usr/bin/env bash
+    if [[ "{{host}}" == "$(hostname)" ]]; then
+        echo "Error: Cannot deploy to local host '{{host}}'. Use 'just switch' instead."
+        exit 1
+    fi
+    if ! nix eval .#deploy.nodes.{{host}} --quiet 2>/dev/null; then
+        echo "Error: Deploy node '{{host}}' not found in flake."
+        available=$(nix eval .#deploy.nodes --apply builtins.attrNames --json 2>/dev/null | sed 's/\[//;s/\]//;s/"//g;s/,/ /g')
+        echo "Available nodes: $available"
+        exit 1
+    fi
+    NO_EMOJI=1 deploy .#{{host}} --skip-checks
 
 # Update and deploy to a host
-deploy-upgrade host: update (deploy host)
+deploy-upgrade host="meth": update
+    @just deploy {{host}}
 
 # Clean generations on a host
-clean-remote host:
+clean-remote host="meth":
     ssh {{host}} "sudo nix-collect-garbage --delete-older-than 7d"
