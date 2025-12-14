@@ -4,5 +4,7 @@
     ./firewall.nix
     ./power.nix
     ./sudo.nix
+    ./vaultwarden.nix
+    ./caddy.nix
   ];
 }
