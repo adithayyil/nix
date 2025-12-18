@@ -8,5 +8,6 @@
     ./vaultwarden.nix
     ./caddy.nix
     ./copyparty.nix
+    ./cloudflared.nix
   ];
 }
