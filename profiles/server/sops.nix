@@ -10,6 +10,11 @@
         owner = "copyparty";
         mode = "0400";
       };
+
+      "cloudflared/credentials" = {
+        owner = "cloudflared";
+        mode = "0400";
+      };
     };
   };
 }
