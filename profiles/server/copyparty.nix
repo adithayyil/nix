@@ -21,6 +21,8 @@
       xff-hdr = "cf-connecting-ip";
       xff-src = "127.0.0.1,::1";
       rproxy = 1;
+      e2ts = true;  # Enable video transcoding
+      e2d = true;   # Enable thumbnail generation
     };
 
     accounts = {
