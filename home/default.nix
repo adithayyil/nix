@@ -33,6 +33,7 @@ in
     wget
     btop
     just
+    jq
 
     claude-code
     github-copilot-cli
