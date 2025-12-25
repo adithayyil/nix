@@ -48,6 +48,7 @@ in
     davinci
     spotify
     lumafly
+    localsend
 
     brightnessctl
     wl-clipboard
