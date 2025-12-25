@@ -26,6 +26,12 @@
     sops
   ];
 
+  networking.firewall = {
+    # for localsend
+    allowedTCPPorts = [ 53317 ];
+    allowedUDPPorts = [ 53317 ];
+  };
+
   # DO NOT CHANGE
   system.stateVersion = "25.05";
 }
