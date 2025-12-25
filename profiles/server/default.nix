@@ -9,5 +9,6 @@
     ./caddy.nix
     ./copyparty.nix
     ./cloudflared.nix
+    ./uptime-kuma.nix
   ];
 }

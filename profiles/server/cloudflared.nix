@@ -11,6 +11,7 @@
         ingress = {
           "vault.mangoo.site" = "http://localhost:80";
           "store.mangoo.site" = "http://localhost:8080";
+          "monitor.mangoo.site" = "http://localhost:3001";
         };
       };
     };
