@@ -72,6 +72,7 @@ in
 
     # utils
     localsend
+    qbittorrent
 
     # wl utilities
     brightnessctl
