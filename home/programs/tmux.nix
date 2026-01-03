@@ -44,6 +44,9 @@
 
       bind r source-file ~/.config/tmux/tmux.conf \; display "Config reloaded!"
 
+      set-option -g status-position top
+      set-option -g status-justify centre
+
       set-option -g status-style "bg=#eff1f5,fg=#4c4f69"
 
       set-window-option -g window-status-style "fg=#4c4f69,bg=#eff1f5"
