@@ -56,6 +56,9 @@ in
     # python tools
     uv
 
+    # productivity
+    joplin-desktop
+
     # communication
     vesktop
     signal-desktop
