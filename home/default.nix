@@ -37,6 +37,7 @@ in
     rustfmt
     gcc
     rustlings
+    sqlitebrowser
 
     # cli
     wget
