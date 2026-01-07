@@ -19,6 +19,7 @@ in
     ./programs/ssh.nix
     ./programs/vscodium.nix
     ./programs/neovim.nix
+    ./programs/zathura.nix
     ./shell/bash.nix
   ];
 
