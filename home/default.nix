@@ -40,6 +40,7 @@ in
     gcc
     rustlings
     sqlitebrowser
+    typst
 
     # cli
     wget
