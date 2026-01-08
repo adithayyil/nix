@@ -35,22 +35,7 @@ in
       bars = [ ];
 
       output = {
-        # Home monitor
-        "BNQ BenQ EX2510S G3N03892019" = {
-          mode = "1920x1080@165.003Hz";
-          position = "0,0";
-          bg = "${colors.base} solid_color";
-        };
-        # School monitor
-        "HDMI-A-1" = {
-          mode = "2560x1440@59.951Hz";
-          position = "0,0";
-          bg = "${colors.base} solid_color";
-        };
-        # Laptop display
-        "eDP-1" = {
-          mode = "1920x1080@60.001Hz";
-          position = "0,1080";
+        "*" = {
           bg = "${colors.base} solid_color";
         };
       };

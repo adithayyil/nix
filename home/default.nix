@@ -20,6 +20,7 @@ in
     ./programs/vscodium.nix
     ./programs/neovim.nix
     ./programs/zathura.nix
+    ./programs/kanshi.nix
     ./shell/bash.nix
   ];
 

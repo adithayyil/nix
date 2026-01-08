@@ -32,6 +32,7 @@
         ts.enable = true;
         html.enable = true;
         css.enable = true;
+        typst.enable = true;
       };
 
       treesitter.enable = true;
