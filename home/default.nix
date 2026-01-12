@@ -1,12 +1,13 @@
 {
   config,
   pkgs,
+  pkgs-stable,
   lib,
   ...
 }:
 
 let
-  davinci = import ../pkgs/davinci-resolve { inherit pkgs; };
+  davinci = import ../pkgs/davinci-resolve { inherit pkgs pkgs-stable; };
 in
 {
   imports = [
@@ -61,6 +62,7 @@ in
 
     # productivity
     joplin-desktop
+    anki
 
     # communication
     vesktop

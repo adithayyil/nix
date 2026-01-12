@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -31,6 +32,7 @@
     {
       self,
       nixpkgs,
+      nixpkgs-stable,
       home-manager,
       deploy-rs,
       sops-nix,
@@ -59,6 +61,12 @@
         pkgs = import nixpkgs {
           system = "x86_64-linux";
           config.allowUnfree = true;
+        };
+        extraSpecialArgs = {
+          pkgs-stable = import nixpkgs-stable {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
         };
         modules = [
           nvf.homeManagerModules.default
