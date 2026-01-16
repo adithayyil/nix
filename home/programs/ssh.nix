@@ -14,7 +14,7 @@
 
     matchBlocks = {
       "meth" = {
-        hostname = "10.0.0.76";
+        hostname = "192.168.2.111";
         user = "adi";
         identityFile = "~/.ssh/meth";
       };
