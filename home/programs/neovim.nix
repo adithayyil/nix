@@ -75,6 +75,14 @@
         splitright = true;
         splitbelow = true;
       };
+
+      autocmds = [
+        {
+          event = [ "BufWritePost" ];
+          pattern = [ "*.typ" ];
+          command = "silent !typst compile % %:r.pdf";
+        }
+      ];
     };
   };
 }
