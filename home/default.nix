@@ -75,6 +75,7 @@ in
     # creative
     figma-linux
     davinci
+    obs-studio
 
     # gaming
     lumafly
