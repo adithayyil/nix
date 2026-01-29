@@ -22,10 +22,9 @@
 
   networking.networkmanager.enable = true;
 
-  services.cloudflare-warp.enable = true;
-
   environment.systemPackages = with pkgs; [
     sops
+    protonvpn-gui
   ];
 
   networking.firewall = {
