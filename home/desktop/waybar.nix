@@ -122,6 +122,7 @@
         };
 
         network = {
+          interface = "wlp3s0";
           format-wifi = "{icon}";
           format-ethernet = "󰈀";
           format-disconnected = "󰖪";
