@@ -8,6 +8,7 @@
 
 let
   davinci = import ../pkgs/davinci-resolve { inherit pkgs pkgs-stable; };
+  vesktop = import ../pkgs/vesktop { inherit pkgs; };
 in
 {
   imports = [
@@ -32,7 +33,7 @@ in
 
   home.stateVersion = "25.05";
 
-  home.packages = with pkgs; [
+  home.packages = (with pkgs; [
     # dev
     rustc
     cargo
@@ -65,7 +66,6 @@ in
     anki
 
     # communication
-    vesktop
     signal-desktop
 
     # media
@@ -74,7 +74,6 @@ in
 
     # creative
     figma-linux
-    davinci
     obs-studio
 
     # gaming
@@ -91,6 +90,9 @@ in
     swaylock-effects
     waybar
     pulseaudio
+  ]) ++ [
+    vesktop
+    davinci
   ];
 
   xdg.enable = true;
